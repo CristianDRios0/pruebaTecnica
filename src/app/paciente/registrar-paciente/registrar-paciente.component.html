@@ -1,1 +1,113 @@
-<p>registrar-paciente works!</p>
+<div>
+    <h3>REGISTRAR PACIENTE</h3>
+</div>
+<div>
+
+<form class="row g-3 needs-validation" novalidate>
+    <div class="col-md-4 position-relative">
+        <label for="validarPrimerNombre" class="form-label">Primer Nombre</label>
+        <input type="text" class="form-control" id="validarPrimerNombre" name="primerNombre" [(ngModel)]="nuevoPaciente.primerNombre" required>
+        <div class="valid-tooltip">
+        Looks good!
+        </div>
+    </div>
+
+    <div class="col-md-4 position-relative">
+        <label for="validarSegundoNombre" class="form-label">Segundo Nombre</label>
+        <input type="text" class="form-control" id="validarSegundoNombre" name="segundoNombre" [(ngModel)]="nuevoPaciente.segundoNombre" required>
+        <div class="valid-tooltip">
+        Looks good!
+        </div>
+    </div>
+
+    <div class="col-md-4 position-relative">
+        <label for="validarPrimerApellido" class="form-label">Primer Apellido</label>
+        <input type="text" class="form-control" id="validarPrimerApellido" name="primerApellido" [(ngModel)]="nuevoPaciente.primerApellido" required>
+        <div class="valid-tooltip">
+        Looks good!
+        </div>
+    </div>
+
+    <div class="col-md-4 position-relative">
+        <label for="validarSegundoApellido" class="form-label">Segundo Apellido</label>
+        <input type="text" class="form-control" id="validarSegundoApellido" name="segundoApellido" [(ngModel)]="nuevoPaciente.segundoApellido" required>
+        <div class="valid-tooltip">
+        Looks good!
+        </div>
+    </div>
+
+    <div class="col-md-3 position-relative">
+        <label for="validarTipoDocumento" class="form-label">Tipo de Documento</label>
+        <select class="form-select" id="validarTipoDocumento" name="tipoDocumento" [(ngModel)]="nuevoPaciente.tipoDocumento" required>
+            <option selected disabled value="">Selecciona una opcion</option>
+            <option value="CC">Cédula de ciudadanía</option>
+            <option value="CE">Cédula de extranjería</option>
+        </select>
+        <div class="invalid-tooltip">
+        Por favor selecciona un tipo de documento valido
+        </div>
+    </div>
+
+    <div class="col-md-4 position-relative">
+        <label for="validarNumeroDocumento" class="form-label">Número de documento</label>
+        <input type="number" class="form-control" id="validarNumeroDocumento" name="numeroDocumento" [(ngModel)]="nuevoPaciente.numeroDocumento" required>
+        <div class="valid-tooltip">
+        Looks good!
+        </div>
+    </div>
+
+    <div class="col-md-4 position-relative">
+        <label for="validarEmail" class="form-label"></label>
+        <div class="input-group has-validation">
+            <span class="input-group-text" id="validarEmail">&#64;</span>
+            <input type="email" class="form-control" id="validarEmail" name="email" [(ngModel)]="nuevoPaciente.email" required>
+            <div class="invalid-tooltip">
+                Ingresa un correo electrónico válido
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 position-relative">
+        <label for="validarNumeroCelular" class="form-label">Número de Celular</label>
+        <input type="tel" class="form-control" id="validarNumeroCelular" name="numeroCelular" [(ngModel)]="nuevoPaciente.numeroCelular" required>
+        <div class="valid-tooltip">
+            Looks good!
+        </div>
+    </div>
+
+    <div class="col-md-4 position-relative">
+        <label for="validarDireccion" class="form-label">Dirección</label>
+        <input type="text" class="form-control" id="validarDireccion" name="direccion" [(ngModel)]="nuevoPaciente.direccion" required>
+        <div class="valid-tooltip">
+            Looks good!
+        </div>
+    </div>
+
+    <div class="col-md-3 position-relative">
+        <label for="validarPais" class="form-label">País</label>
+        <input type="text" class="form-control" id="validarPais" name="pais" [(ngModel)]="nuevoPaciente.pais" required>
+        <div class="valid-tooltip">
+            Looks good!
+        </div>
+    </div>
+
+    <div class="col-md-3 position-relative">
+        <label for="validarDepartamento" class="form-label">Departamento</label>
+        <input type="text" class="form-control" id="validarDepartamento" name="departamento" [(ngModel)]="nuevoPaciente.departamento" required>
+        <div class="valid-tooltip">
+            Looks good!
+        </div>
+    </div>
+
+    <div class="col-md-3 position-relative">
+        <label for="validarCiudad" class="form-label">Ciudad</label>
+        <input type="text" class="form-control" id="validarCiudad" name="ciudad" [(ngModel)]="nuevoPaciente.ciudad" required>
+        <div class="valid-tooltip">
+            Looks good!
+        </div>
+    </div>
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit" (click)="registrarPaciente()">Registrar</button>
+        <button class="btn btn-danger" type="submit" routerLink="/paciente/">Cancelar</button>
+    </div>
+</form>
