@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListarHistoriaComponent } from './listar-historia/listar-historia.component';
 import { CrearHistoriaComponent } from './crear-historia/crear-historia.component';
-import { Routes, ROUTES } from '@angular/router';
+import { RouterModule, Routes, ROUTES } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'listar-historia',
     component: ListarHistoriaComponent
   },
   {
@@ -21,7 +21,8 @@ const routes: Routes = [
     CrearHistoriaComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild(routes)
   ]
 })
 export class HistoriaClinicaModule { }

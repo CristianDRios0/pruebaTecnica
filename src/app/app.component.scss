@@ -1,0 +1,53 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: cornflowerblue;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.main-content {
+    display: flex;
+    flex-grow: 1;
+    margin-top: 80px;
+    width: 100%;
+}
+
+.sidebar {
+    width: 240px;
+    background-color: #f4f4f4;
+    top: 80px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-area {
+    flex-grow: 1;
+    margin-left: 240px;
+    margin-top: 79px;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+router-outlet {
+    display: block;
+    width: 100%;
+}
