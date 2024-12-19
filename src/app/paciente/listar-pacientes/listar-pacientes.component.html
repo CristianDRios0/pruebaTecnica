@@ -1,1 +1,62 @@
-<p>listar-pacientes works!</p>
+<div>
+    <h3>PACIENTES</h3>
+</div>
+<div>
+
+<div class="row">
+    <div class="col-12 d-flex justify-content-between align-items-center">
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar por documento" aria-label="Search" [(ngModel)]= numeroBusqueda name="numeroBusqueda" (input) = "buscarPaciente()">
+        </form>
+        <button class="btn btn-primary" routerLink="/paciente/registrar-paciente"><i class="bi bi-plus-circle-fill"></i>Registrar</button>
+    </div>
+</div>
+
+</div>
+<div> 
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Documento</th>
+                <th scope="col">Primer Nombre</th>
+                <th scope="col">Segundo Nombre</th>
+                <th scope="col">Primer Apellido</th>
+                <th scope="col">Segundo Apellido</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let paciente of busqueda">
+                <th>{{paciente.numeroDocumento}}</th>
+                <td>{{paciente.primerNombre}}</td>
+                <td>{{paciente.segundoNombre}}</td>
+                <td>{{paciente.primerApellido}}</td>
+                <td>{{paciente.segundoApellido}}</td>
+                <td>
+                    <button type="button" class="btn btn-info" data-bs-toggle="modal"
+                    data-bs-target="#detallePacienteModal"><i class="bi bi-search" (click)="seleccionarPaciente(paciente)"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>  
+
+<div
+    class="modal fade" id="detallePacienteModal" tabindex="-1" aria-labelledby="detallePacienteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detallePacienteModalLabel">CONSULTAR INFORMACION DEL PACIENTE</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <app-consultar-paciente [pacienteSeleccionado] = "pacienteSeleccionado"></app-consultar-paciente>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

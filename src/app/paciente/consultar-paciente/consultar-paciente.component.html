@@ -1,0 +1,71 @@
+<form class="row g-3 needs-validation" novalidate>
+    <div class="col-md-4 position-relative">
+        <label for="validarPrimerNombre" class="form-label">Primer Nombre</label>
+        <input type="text" class="form-control" id="validarPrimerNombre" name="primerNombre" *ngIf="pacienteSeleccionado" [(ngModel)] = pacienteSeleccionado.primerNombre readonly>
+    </div>
+
+    <div class="col-md-4 position-relative">
+        <label for="validarSegundoNombre" class="form-label">Segundo Nombre</label>
+        <input type="text" class="form-control" id="validarSegundoNombre" name="segundoNombre" *ngIf="pacienteSeleccionado" [(ngModel)] = pacienteSeleccionado.segundoNombre readonly>
+    </div>
+
+    <div class="col-md-4 position-relative">
+        <label for="validarPrimerApellido" class="form-label">Primer Apellido</label>
+        <input type="text" class="form-control" id="validarPrimerApellido" name="primerApellido" *ngIf="pacienteSeleccionado" [(ngModel)] = pacienteSeleccionado.primerApellido readonly>
+    </div>
+
+    <div class="col-md-4 position-relative">
+        <label for="validarSegundoApellido" class="form-label">Segundo Apellido</label>
+        <input type="text" class="form-control" id="validarSegundoApellido" name="segundoApellido" *ngIf="pacienteSeleccionado" [(ngModel)] = pacienteSeleccionado.segundoApellido readonly>
+    </div>
+
+    <div class="col-md-3 position-relative">
+        <label for="validarTipoDocumento" class="form-label">Tipo de Documento</label>
+        <select class="form-select" id="validarTipoDocumento" name="tipoDocumento" *ngIf="pacienteSeleccionado" [(ngModel)] = pacienteSeleccionado.tipoDocumento disabled>
+            <option selected disabled value="">Selecciona una opcion</option>
+            <option value="CC">Cédula de ciudadanía</option>
+            <option value="CE">Cédula de extranjería</option>
+        </select>
+    </div>
+
+    <div class="col-md-4 position-relative">
+        <label for="validarNumeroDocumento" class="form-label">Número de documento</label>
+        <input type="number" class="form-control" id="validarNumeroDocumento" name="numeroDocumento" *ngIf="pacienteSeleccionado" [(ngModel)] = pacienteSeleccionado.numeroDocumento readonly>
+    </div>
+
+    <div class="col-md-4 position-relative">
+        <label for="validarEmail" class="form-label"></label>
+        <div class="input-group has-validation">
+            <span class="input-group-text" id="validarEmail">&#64;</span>
+            <input type="email" class="form-control" id="validarEmail" name="email" *ngIf="pacienteSeleccionado" [(ngModel)] = pacienteSeleccionado.email readonly>
+        </div>
+    </div>
+
+    <div class="col-md-4 position-relative">
+        <label for="validarNumeroCelular" class="form-label">Número de Celular</label>
+        <input type="tel" class="form-control" id="validarNumeroCelular" name="numeroCelular" *ngIf="pacienteSeleccionado" [(ngModel)] = pacienteSeleccionado.numeroCelular readonly>
+    </div>
+
+    <div class="col-md-4 position-relative">
+        <label for="validarDireccion" class="form-label">Dirección</label>
+        <input type="text" class="form-control" id="validarDireccion" name="direccion" *ngIf="pacienteSeleccionado" [(ngModel)] = pacienteSeleccionado.direccion readonly>
+    </div>
+
+    <div class="col-md-3 position-relative">
+        <label for="validarPais" class="form-label">País</label>
+        <input type="text" class="form-control" id="validarPais" name="pais" *ngIf="pacienteSeleccionado" [(ngModel)] = pacienteSeleccionado.pais readonly>
+    </div>
+
+    <div class="col-md-3 position-relative">
+        <label for="validarDepartamento" class="form-label">Departamento</label>
+        <input type="text" class="form-control" id="validarDepartamento" name="departamento" *ngIf="pacienteSeleccionado" [(ngModel)] = pacienteSeleccionado.departamento readonly>
+    </div>
+
+    <div class="col-md-3 position-relative">
+        <label for="validarCiudad" class="form-label">Ciudad</label>
+        <input type="text" class="form-control" id="validarCiudad" name="ciudad" *ngIf="pacienteSeleccionado" [(ngModel)] = pacienteSeleccionado.ciudad readonly>
+    </div>
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit">HC</button>
+    </div>
+</form>
