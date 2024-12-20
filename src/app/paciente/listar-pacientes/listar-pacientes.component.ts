@@ -20,7 +20,6 @@ export class ListarPacientesComponent {
     segundoApellido: '',
     tipoDocumento: '',
     numeroDocumento: 0,
-    fechaNacimiento: new Date(),
     numeroCelular: 0,
     direccion: '',
     pais: '',

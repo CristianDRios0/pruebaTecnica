@@ -5,7 +5,6 @@ export interface Paciente{
     segundoApellido: string;
     tipoDocumento: string;
     numeroDocumento: number;
-    fechaNacimiento: Date;
     numeroCelular: number;
     direccion: string;
     pais: string;
