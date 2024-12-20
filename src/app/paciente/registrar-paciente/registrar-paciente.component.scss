@@ -1,0 +1,109 @@
+$primary-color: #007bff; 
+$secondary-color: #f8f9fa; 
+$button-spacing: 20px; 
+
+h3 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: $primary-color;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 123, 255, 0.5);
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: darken($primary-color, 15%);
+  }
+}
+
+form {
+  margin-top: 20px;
+  .form-label {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .form-control {
+    border-radius: 25px;
+    font-size: 1rem;
+    padding-left: 15px;
+    transition: all 0.3s ease;
+  }
+
+  .form-control:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
+  }
+
+  .input-group-text {
+    background-color: $primary-color;
+    color: #fff;
+    border-radius: 25px 0 0 25px;
+  }
+
+  .input-group .form-control {
+    border-radius: 0 25px 25px 0;
+  }
+
+  .valid-tooltip,
+  .invalid-tooltip {
+    font-size: 0.875rem;
+  }
+
+  .invalid-tooltip {
+    color: #dc3545;
+  }
+
+  .valid-tooltip {
+    color: #28a745;
+  }
+
+  .g-3 {
+    gap: 1.5rem;
+  }
+}
+
+button.btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  
+  i {
+    margin-right: 8px; 
+  }
+
+  &.btn-primary {
+    background-color: $primary-color;
+    border: 2px solid $primary-color;
+    color: white;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      border-color: darken($primary-color, 10%);
+    }
+  }
+
+  &.btn-danger {
+    background-color: #dc3545;
+    border: 2px solid #dc3545;
+    color: white;
+
+    &:hover {
+      background-color: darken(#dc3545, 10%);
+      border-color: darken(#dc3545, 10%);
+    }
+  }
+
+  & + .btn {
+    margin-left: $button-spacing; 
+  }
+}
+
+div {
+  margin-top: 20px;
+}
