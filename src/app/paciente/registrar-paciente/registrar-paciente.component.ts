@@ -23,8 +23,7 @@ export class RegistrarPacienteComponent {
     direccion: '',
     pais: '',
     departamento: '',
-    ciudad: '',
-    fechaNacimiento: new Date()
+    ciudad: ''
   }
 
   constructor(private pacienteService: PacienteService, private router: Router) {}
