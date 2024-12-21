@@ -4,6 +4,7 @@ import { PacienteService } from '../../servicios/paciente.service';
 import { of } from 'rxjs';
 import { By } from '@angular/platform-browser';
 import { FormsModule, NgForm } from '@angular/forms';
+import { ConsultarPacienteComponent } from '../consultar-paciente/consultar-paciente.component';
 
 // Mock del servicio PacienteService
 class MockPacienteService {
@@ -27,7 +28,7 @@ describe('ListarPacientesComponent', () => {
   // Configuración del entorno de pruebas
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ListarPacientesComponent],
+      declarations: [ListarPacientesComponent, ConsultarPacienteComponent],
       imports: [FormsModule], // Importamos FormsModule para usar ngModel
       providers: [
         { provide: PacienteService, useClass: MockPacienteService } // Usamos el mock del servicio

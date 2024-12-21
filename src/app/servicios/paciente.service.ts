@@ -14,10 +14,15 @@ export class PacienteService {
 
   cargarDatosIniciales(): void {
     const pacientesGuardados = localStorage.getItem('pacientes')
-    if (pacientesGuardados) {
-      this.listaPacientes = JSON.parse(pacientesGuardados)
-    } else {
-      this.generarPacientes()
+    try {
+      if (pacientesGuardados) {
+        this.listaPacientes = JSON.parse(pacientesGuardados)
+      } else {
+        this.generarPacientes()
+      }
+    } catch(error) {
+      console.error('Error al cargar los pacientes desde localStorage:', error);
+      this.listaPacientes = [];
     }
   }
 
@@ -42,7 +47,7 @@ export class PacienteService {
         segundoNombre: 'Fernanda',
         primerApellido: 'Gómez',
         segundoApellido: 'Rodríguez',
-        tipoDocumento: 'TI',
+        tipoDocumento: 'CE',
         numeroDocumento: 87654321,
         numeroCelular: 3007654321,
         direccion: 'Avenida 5 #32-10',
@@ -98,7 +103,7 @@ export class PacienteService {
         segundoNombre: 'Mariana',
         primerApellido: 'Suárez',
         segundoApellido: 'Díaz',
-        tipoDocumento: 'TI',
+        tipoDocumento: 'CC',
         numeroDocumento: 66554433,
         numeroCelular: 3001122335,
         direccion: 'Avenida 12 #20-70',
@@ -140,7 +145,7 @@ export class PacienteService {
         segundoNombre: 'Felipe',
         primerApellido: 'Vega',
         segundoApellido: 'Gómez',
-        tipoDocumento: 'TI',
+        tipoDocumento: 'CC',
         numeroDocumento: 77665544,
         numeroCelular: 3006677889,
         direccion: 'Calle 25 #30-50',
@@ -182,7 +187,7 @@ export class PacienteService {
         segundoNombre: 'Cristina',
         primerApellido: 'Sánchez',
         segundoApellido: 'Rodríguez',
-        tipoDocumento: 'TI',
+        tipoDocumento: 'CE',
         numeroDocumento: 99887733,
         numeroCelular: 3003344557,
         direccion: 'Carrera 8 #20-30',
@@ -210,7 +215,7 @@ export class PacienteService {
         segundoNombre: 'Cecilia',
         primerApellido: 'Mora',
         segundoApellido: 'Martínez',
-        tipoDocumento: 'TI',
+        tipoDocumento: 'CC',
         numeroDocumento: 44556688,
         numeroCelular: 3005566677,
         direccion: 'Avenida 9 #50-40',

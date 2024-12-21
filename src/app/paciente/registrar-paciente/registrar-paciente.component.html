@@ -3,56 +3,57 @@
 </div>
 <div>
 
-<form class="row g-3 needs-validation" novalidate>
+<form class="row g-3 needs-validation" (ngSubmit)="registrarPaciente()" #form="ngForm">
+
     <div class="col-md-4 position-relative">
         <label for="validarPrimerNombre" class="form-label">Primer Nombre</label>
-        <input type="text" class="form-control" id="validarPrimerNombre" name="primerNombre" [(ngModel)]="nuevoPaciente.primerNombre" required>
-        <div class="valid-tooltip">
-        Looks good!
+        <input type="text" class="form-control" id="validarPrimerNombre" name="primerNombre" [(ngModel)]="nuevoPaciente.primerNombre" required #primerNombre="ngModel">
+        <div class="valid-tooltip" *ngIf="primerNombre.invalid && primerNombre.touched">
+            Ingresa tu primer nombre
         </div>
     </div>
 
     <div class="col-md-4 position-relative">
         <label for="validarSegundoNombre" class="form-label">Segundo Nombre</label>
-        <input type="text" class="form-control" id="validarSegundoNombre" name="segundoNombre" [(ngModel)]="nuevoPaciente.segundoNombre" required>
-        <div class="valid-tooltip">
-        Looks good!
+        <input type="text" class="form-control" id="validarSegundoNombre" name="segundoNombre" [(ngModel)]="nuevoPaciente.segundoNombre" required #segundoNombre="ngModel">
+        <div class="valid-tooltip" *ngIf="segundoNombre.invalid && segundoNombre.touched">
+            Ingresa tu segundo nombre
         </div>
     </div>
 
     <div class="col-md-4 position-relative">
         <label for="validarPrimerApellido" class="form-label">Primer Apellido</label>
-        <input type="text" class="form-control" id="validarPrimerApellido" name="primerApellido" [(ngModel)]="nuevoPaciente.primerApellido" required>
-        <div class="valid-tooltip">
-        Looks good!
+        <input type="text" class="form-control" id="validarPrimerApellido" name="primerApellido" [(ngModel)]="nuevoPaciente.primerApellido" required #primerApellido="ngModel">
+        <div class="valid-tooltip" *ngIf="primerApellido.invalid && primerApellido.touched">
+            Ingresa tu primer apellido
         </div>
     </div>
 
     <div class="col-md-4 position-relative">
         <label for="validarSegundoApellido" class="form-label">Segundo Apellido</label>
-        <input type="text" class="form-control" id="validarSegundoApellido" name="segundoApellido" [(ngModel)]="nuevoPaciente.segundoApellido" required>
-        <div class="valid-tooltip">
-        Looks good!
+        <input type="text" class="form-control" id="validarSegundoApellido" name="segundoApellido" [(ngModel)]="nuevoPaciente.segundoApellido" required #segundoApellido="ngModel">
+        <div class="valid-tooltip" *ngIf="segundoApellido.invalid && segundoApellido.touched">
+            Ingresa tu segundo apellido
         </div>
     </div>
 
     <div class="col-md-3 position-relative">
         <label for="validarTipoDocumento" class="form-label">Tipo de Documento</label>
-        <select class="form-select" id="validarTipoDocumento" name="tipoDocumento" [(ngModel)]="nuevoPaciente.tipoDocumento" required>
+        <select class="form-select" id="validarTipoDocumento" name="tipoDocumento" [(ngModel)]="nuevoPaciente.tipoDocumento" required #tipoDocumento="ngModel">
             <option selected disabled value="">Selecciona una opcion</option>
             <option value="CC">Cédula de ciudadanía</option>
             <option value="CE">Cédula de extranjería</option>
         </select>
-        <div class="invalid-tooltip">
-        Por favor selecciona un tipo de documento valido
+        <div class="invalid-tooltip" *ngIf="tipoDocumento.invalid && tipoDocumento.touched">
+            Por favor selecciona un tipo de documento valido
         </div>
     </div>
 
     <div class="col-md-4 position-relative">
         <label for="validarNumeroDocumento" class="form-label">Número de documento</label>
-        <input type="number" class="form-control" id="validarNumeroDocumento" name="numeroDocumento" [(ngModel)]="nuevoPaciente.numeroDocumento" required>
-        <div class="valid-tooltip">
-        Looks good!
+        <input type="number" class="form-control" id="validarNumeroDocumento" name="numeroDocumento" [(ngModel)]="nuevoPaciente.numeroDocumento" required #numeroDocumento="ngModel">
+        <div class="valid-tooltip" *ngIf="numeroDocumento.invalid && numeroDocumento.touched">
+            Ingresa tu número de documento, valores permitidos: números
         </div>
     </div>
 
@@ -60,8 +61,8 @@
         <label for="validarEmail" class="form-label"></label>
         <div class="input-group has-validation">
             <span class="input-group-text" id="validarEmail">&#64;</span>
-            <input type="email" class="form-control" id="validarEmail" name="email" [(ngModel)]="nuevoPaciente.email" required>
-            <div class="invalid-tooltip">
+            <input type="email" class="form-control" id="validarEmail" name="email" [(ngModel)]="nuevoPaciente.email" required #email="ngModel">
+            <div class="invalid-tooltip" *ngIf="email.invalid && email.touched">
                 Ingresa un correo electrónico válido
             </div>
         </div>
@@ -69,45 +70,45 @@
 
     <div class="col-md-4 position-relative">
         <label for="validarNumeroCelular" class="form-label">Número de Celular</label>
-        <input type="tel" class="form-control" id="validarNumeroCelular" name="numeroCelular" [(ngModel)]="nuevoPaciente.numeroCelular" required>
-        <div class="valid-tooltip">
-            Looks good!
+        <input type="number" class="form-control" id="validarNumeroCelular" name="numeroCelular" [(ngModel)]="nuevoPaciente.numeroCelular" required #numeroCelular="ngModel">
+        <div class="valid-tooltip" *ngIf="numeroCelular.invalid && numeroCelular.touched">
+            Ingresa tu número de celular, valores permitidos: números
         </div>
     </div>
 
     <div class="col-md-4 position-relative">
         <label for="validarDireccion" class="form-label">Dirección</label>
-        <input type="text" class="form-control" id="validarDireccion" name="direccion" [(ngModel)]="nuevoPaciente.direccion" required>
-        <div class="valid-tooltip">
-            Looks good!
+        <input type="text" class="form-control" id="validarDireccion" name="direccion" [(ngModel)]="nuevoPaciente.direccion" required #direccion="ngModel">
+        <div class="valid-tooltip" *ngIf="direccion.invalid && direccion.touched">
+            Ingresa una dirección
         </div>
     </div>
 
     <div class="col-md-3 position-relative">
         <label for="validarPais" class="form-label">País</label>
-        <input type="text" class="form-control" id="validarPais" name="pais" [(ngModel)]="nuevoPaciente.pais" required>
-        <div class="valid-tooltip">
-            Looks good!
+        <input type="text" class="form-control" id="validarPais" name="pais" [(ngModel)]="nuevoPaciente.pais" required #pais="ngModel">
+        <div class="valid-tooltip" *ngIf="pais.invalid && pais.touched">
+            Ingresa un país
         </div>
     </div>
 
     <div class="col-md-3 position-relative">
         <label for="validarDepartamento" class="form-label">Departamento</label>
-        <input type="text" class="form-control" id="validarDepartamento" name="departamento" [(ngModel)]="nuevoPaciente.departamento" required>
-        <div class="valid-tooltip">
-            Looks good!
+        <input type="text" class="form-control" id="validarDepartamento" name="departamento" [(ngModel)]="nuevoPaciente.departamento" required #departamento="ngModel">
+        <div class="valid-tooltip" *ngIf="departamento.invalid && departamento.touched">
+            Ingresa un departamento
         </div>
     </div>
 
     <div class="col-md-3 position-relative">
         <label for="validarCiudad" class="form-label">Ciudad</label>
-        <input type="text" class="form-control" id="validarCiudad" name="ciudad" [(ngModel)]="nuevoPaciente.ciudad" required>
-        <div class="valid-tooltip">
-            Looks good!
+        <input type="text" class="form-control" id="validarCiudad" name="ciudad" [(ngModel)]="nuevoPaciente.ciudad" required #ciudad="ngModel">
+        <div class="valid-tooltip" *ngIf="ciudad.invalid && ciudad.touched">
+            Ingresa una ciudad
         </div>
     </div>
     <div class="col-12">
-        <button class="btn btn-primary" type="submit" (click)="registrarPaciente()"><i class="bi bi-plus-circle-fill"></i>Registrar</button>
-        <button class="btn btn-danger" type="submit" routerLink="/paciente/"><i class="bi bi-x-circle-fill"></i>Cancelar</button>
+        <button class="btn btn-primary" [disabled]="form.invalid"><i class="bi bi-plus-circle-fill"></i>Registrar</button>
+        <button class="btn btn-danger" type="button" routerLink="/paciente/"><i class="bi bi-x-circle-fill"></i>Cancelar</button>
     </div>
 </form>
