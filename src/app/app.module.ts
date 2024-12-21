@@ -6,6 +6,7 @@ import { HeaderComponent } from './template/header/header.component';
 import { SidebarComponent } from './template/sidebar/sidebar.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PacienteModule } from './paciente/paciente.module';
 
 @NgModule({
   declarations: [
